@@ -77,18 +77,18 @@ if submitted:
     with st.spinner('Predicting... Please wait!!!'):
         time.sleep(7)
 
-
-
-# Specify the path to your .zip file
-zip_file_path = "classifier.zip"
-
-# Open the .zip file in read mode
-with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
-    # List all files and directories in the .zip file
-    zip_ref.printdir()
-    with zip_ref.open("classifier.pkl") as file:    
-        clf=pickle.load(file)
     
+    
+    # Specify the path to your .zip file
+    zip_file_path = "classifier.zip"
+    
+    # Open the .zip file in read mode
+    with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+        # List all files and directories in the .zip file
+        zip_ref.printdir()
+        with zip_ref.open("classifier.pkl") as file:    
+            clf=pickle.load(file)
+        
     predictions=clf.predict([[one, two, three, four, five, six, seven, eight, nine, ten,eleven]])
 
     
