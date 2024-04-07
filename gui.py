@@ -89,7 +89,7 @@ with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
     with zip_ref.open("classifier.pkl") as file:    
         clf=pickle.load(file)
     
-    predictions=clf.predict([[13.81680571,2.245572725,0,0,2.874059242,5.127805848,74.01146451,66.13049057,2.091322253,5.789651692,1]])
+    predictions=clf.predict([[one, two, three, four, five, six, seven, eight, nine, ten,eleven]])
 
     
     st.header(":blue[Result:]")
