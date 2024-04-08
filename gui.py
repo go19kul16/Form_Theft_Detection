@@ -27,7 +27,7 @@ with st.form("my_form"):
         seven =st.number_input(":green[Enter Gas]",step=None,min_value=0.1,max_value=500.3,help="Value in [kW] Hourly")
     
     #with col3:
-        st.subheader(":blue[ENTER THE GAS VALUES]")
+        st.subheader(":blue[GAS VALUES]")
         eight =st.number_input(":blue[Enter for Heating]",step=None,min_value=0.1,max_value=500.3,help="Value in [kW] Hourly")
         nine =st.number_input(":blue[Enter for InteriorEquipment]",step=None,min_value=0.1,max_value=500.3,help="Value in [kW] Hourly")
         ten =st.number_input(":blue[Enter for Water Heater]",step=None,min_value=0.1,max_value=500.3,help="Value in [kW] Hourly")
@@ -36,7 +36,7 @@ with st.form("my_form"):
 
         
         option = st.selectbox(
-        'How would you like to be contacted?',
+        'Customer Type',
         ('FullServiceRestaurant' , 'Hospital' , 'LargeHotel' , 'MediumOffice' , 'MidriseApartment' , 'OutPatient' , 'PrimarySchool' , 'QuickServiceRestaurant' , 'SecondarySchool' , 'SmallHotel' , 'SmallOffice' , 'Stand-aloneRetail' , 'StripMall' , 'SuperMarket' , 'Warehouse' ))
 
         submitted = st.form_submit_button("Submit")
