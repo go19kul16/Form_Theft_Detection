@@ -15,22 +15,22 @@ with st.form("my_form"):
     #with col1:
         st.subheader(":red[ELECTRICITY VALUES]")
         two=st.number_input(":red[Enter for Fans :]",step=None,max_value=1726.432223,help="Value in [kW] Hourly")
-        three=st.number_input(":red[Enter for Cooling:]",min_value=0.1,max_value=240.0152978,help="Value in [kW] Hourly")
-        four =st.number_input(":red[Enter for Heating:]",min_value=0.1,max_value=890.6219066,help="Value in [kW] Hourly")
-        five =st.number_input(":red[Enter for InteriorLights:]",min_value=0.1,max_value=50.3,help="Value in [kW] Hourly")
-        six =st.number_input(":red[Enter for InteriorEquipment:]",min_value=0.1,max_value=50.9,help="Value in [kW] Hourly)")
+        three=st.number_input(":red[Enter for Cooling:]",max_value=240.0152978,help="Value in [kW] Hourly")
+        four =st.number_input(":red[Enter for Heating:]",max_value=890.6219066,help="Value in [kW] Hourly")
+        five =st.number_input(":red[Enter for InteriorLights:]",max_value=50.3,help="Value in [kW] Hourly")
+        six =st.number_input(":red[Enter for InteriorEquipment:]",max_value=50.9,help="Value in [kW] Hourly)")
         
 
     #with col2:
         st.subheader(":green[FACILITY VALUES]")
-        one=st.number_input(":green[Enter for Electricity]",step=None,min_value=0.1,max_value=50.3,help="Value in [kW] Hourly")
-        seven =st.number_input(":green[Enter Gas]",step=None,min_value=0.1,max_value=500.3,help="Value in [kW] Hourly")
+        one=st.number_input(":green[Enter for Electricity]",step=None,max_value=50.3,help="Value in [kW] Hourly")
+        seven =st.number_input(":green[Enter Gas]",step=None,max_value=500.3,help="Value in [kW] Hourly")
     
     #with col3:
         st.subheader(":blue[GAS VALUES]")
-        eight =st.number_input(":blue[Enter for Heating]",step=None,min_value=0.1,max_value=500.3,help="Value in [kW] Hourly")
-        nine =st.number_input(":blue[Enter for InteriorEquipment]",step=None,min_value=0.1,max_value=500.3,help="Value in [kW] Hourly")
-        ten =st.number_input(":blue[Enter for Water Heater]",step=None,min_value=0.1,max_value=500.3,help="Value in [kW] Hourly")
+        eight =st.number_input(":blue[Enter for Heating]",step=None,max_value=500.3,help="Value in [kW] Hourly")
+        nine =st.number_input(":blue[Enter for InteriorEquipment]",step=None,max_value=500.3,help="Value in [kW] Hourly")
+        ten =st.number_input(":blue[Enter for Water Heater]",step=None,max_value=500.3,help="Value in [kW] Hourly")
 
 
 
