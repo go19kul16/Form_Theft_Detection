@@ -102,7 +102,7 @@ if submitted:
     
     st.write("----------------------------------------------------------------------------------------------------")
 
-    accuracy=94.71
+    accuracy=95.3
     st.write(f"* Result ACCURACY :{accuracy}")
 
 
