@@ -97,9 +97,21 @@ if submitted:
 
     if predictions[0]=="Normal":
         st.header(f"The Current Situation is : :green[{predictions[0]}]")
-    else:
+    elif predictions[0]=="Theft1":
+        st.header(f"The Current Situation is : :red[{predictions[0]}]")
+        st.write(" Involves a considerable reduction in electricity consumption during the day, calculated by multiplying the consumption by a randomly chosen value between 0.1 and 0.8.")
+    elif predictions[0]=="Theft2":
+        st.header(f"The Current Situation is : :red[{predictions[0]}]")
+        st.write(" Electricity consumption drops to zero at random and during an arbitrary period.")
+    elif predictions[0]=="Theft3":
+        st.header(f"The Current Situation is : :red[{predictions[0]}]")
+        st.write("Similar to Theft Type 1, but each consumption value (each hour) is multiplied by a random number.")
+    elif predictions[0]=="Theft4":
          st.header(f"The Current Situation is : :red[{predictions[0]}]")
-    
+        st.write("A random fraction of the mean consumption is generated for each hour.")
+    elif predictions[0]=="Theft5":
+        st.header(f"The Current Situation is : :red[{predictions[0]}]")
+        st.write("Reports the mean consumption for each hour.")
     st.write("----------------------------------------------------------------------------------------------------")
 
     accuracy=95.3
