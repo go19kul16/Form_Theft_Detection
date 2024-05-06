@@ -14,7 +14,7 @@ st.header("Theft Detection in a Smart Grid Environment")
 with st.form("my_form"):
     #with col1:
         st.subheader(":red[ELECTRICITY VALUES]")
-        two=st.number_input(":red[Enter for Fans :]",step=None,max_value=1726.432223,help="Value in [kW] Hourly")
+        two=st.number_input(":red[Enter for Fans :] Values Range : (0-1726)",step=None,max_value=1726.432223,help="Value in [kW] Hourly")
         three=st.number_input(":red[Enter for Cooling:]",max_value=240.0152978,help="Value in [kW] Hourly")
         four =st.number_input(":red[Enter for Heating:]",max_value=890.6219066,help="Value in [kW] Hourly")
         five =st.number_input(":red[Enter for InteriorLights:]",max_value=50.3,help="Value in [kW] Hourly")
