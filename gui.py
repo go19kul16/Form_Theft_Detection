@@ -107,7 +107,7 @@ if submitted:
         st.header(f"The Current Situation is : :red[{predictions[0]}]")
         st.write("Similar to Theft Type 1, but each consumption value (each hour) is multiplied by a random number.")
     elif predictions[0]=="Theft4":
-         st.header(f"The Current Situation is : :red[{predictions[0]}]")
+        st.header(f"The Current Situation is : :red[{predictions[0]}]")
         st.write("A random fraction of the mean consumption is generated for each hour.")
     elif predictions[0]=="Theft5":
         st.header(f"The Current Situation is : :red[{predictions[0]}]")
