@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <title>Prediction Form</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .footer {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            }
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #000;
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        .social-icons a i {
+            font-size: 24px;
+        }
+
+        
+header {
+  background-color: #007BFF;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+
+    padding: 50px 0;
+}
+        /* Container for centering content */
+        .container {
+            width: 40%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #ffff;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header styles */
+        h2 {
+            align-content: center;
+            color: #007BFF;
+        }
+
+        /* Form styles */
+        form {
+            margin: 20px 0;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 100px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 26%;
+
+
+        }
+
+        button:hover {
+            background-color: green;
+        }
+        h1{
+            text-align: center;
+            color: #fff;
+        }
+        h3{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: green;
+        }
+        .required {
+            color: red;
+            font-weight: bold;
+        }
+
+       
+        hr {
+            border: none;
+            border-top: 2px solid gray; /* Change color and thickness as needed */
+            margin: 20px 0; /* Add spacing above and below the line */
+        }
+        p{
+        color: red;
+        }
+
+
+        .footer-basic {
+  padding:40px 0;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
+
+
+
+
+
+
+
+
+
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1 >Theft Detection in a Smart Grid Environment</h1>
+      </header>
+    <hr>
+    <div class="container">
+        
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <hr>
+        <H2 style="color: #000; text-align: center;">Theft Detection in a Smart Grid Environment</H2>
+        <h3>All values are in [KW](Hourly)</h3>
+        <p>* Indicates required value</p>
+        <hr>
+        <h2 class="electricityHeading" style="color: #007BFF;">Electricity Value Details</h2>
+          
+        <label for="fans" style="color:black">Electricity Consumed for Fans<span class="required"> * </span></label>
+            <input type="number" id="fans" placeholder="0 - 240" name="fans"min="0" max="240.0" step="0.1" required style="width: 500px;">
+        
+        
+        <label for="cooling" style="color:black">Electricity Consumed for Cooling <span class="required"> * </span></label>
+            <input type="number" id="cooling" placeholder="0 - 890" name="cooling"min="0" max="890.6219066" step="0.1" required style="width: 500px;">
+            <label for="heating1" style="color:black">Electricity Consumed for Heating<span class="required"> * </span></label>
+            <input type="number" id="heating1" placeholder="0 - 277" name="heating1" min="0" max="277.9965196" step="0.1" required style="width: 500px;">
+            <label for="interiorLights" style="color:black">Electricity Consumed for Interior Lights<span class="required"> * </span></label>
+            <input type="number" id="interiorLights"placeholder="0 - 448" name="interiorLights" min="0" max="448.5665436" step="0.1" required style="width: 500px;">
+            <label for="interiorEquipment1" style="color:black">Electricity Consumed for Interior Equipment<span class="required"> * </span></label>
+            <input type="number" id="interiorEquipment1" placeholder="0 - 448"name="interiorEquipment1" min="0" max="448.566" step="0.1" required style="width: 500px;">
+       
+
+
+
+            <h2 class="facilityHeading"  style="color: #007BFF;">Facility Value Details</h2>
+            <form id="facilityForm">
+                <label for="electricity" style="color:black">Electicity Consumed Facility Purpose<span class="required"> * </span></label>
+                <input type="number" id="electricity"  placeholder="0 - 1726" name="electricity" min="0" max="1726.43223" step ="0.1" required style="width: 500px;">
+                <label for="gas" style="color:black">Gas Consumed for Facility Purpose<span class="required"> * </span></label>
+                <input type="number" id="gas"  placeholder="0 - 4491" name="gas" min="0" max="4491.695087" step="0.1" required style="width: 500px;"> 
+
+                <h2 class="gasHeading"  style="color: #007BFF;">Gas Value Details</h2>
+
+                <label for="heating2" style="color:black">Gas Consumed for Heating<span class="required"> * </span></label>
+                <input type="number" id="heating2"placeholder="0 - 4480"  name="heating2" min="0" max="4480.732902" step="0.1" required style="width: 500px;">
+                <label for="interiorEquipment2" style="color:black">Gas Consumed for Interior Equipment<span class="required"> * </span></label>
+                <input type="number" id="interiorEquipment2" placeholder="0 - 91" name="interiorEquipment2" min="0" max="91.79998" step="0.1" required style="width: 500px;">
+                <label for="waterHeater" style="color:black">Gas Consumed for Water Heater<span class="required"> * </span></label>
+                <input type="number" id="waterHeater" placeholder="0 - 783" name="waterHeater" min="0" max="783.8778" required style="width: 500px;">
+  
+                <h2 class="customerType"  style="color: #007BFF;">Customer Detail</h2>
+            
+            <label for="customerType" style="color:black">Choose the Customer Type<span class="required"> * </span></label>
+            <select id="customerType" name="customerType"  required style="width: 500px;">
+                <option value="" disabled selected>Select an option</option>
+                  <option value="1">Full Service Restaurant</option>
+                  <option value="2">Hospital</option>
+                  <option value="3">Large Hotel</option>
+                  <option value="4">Large Office</option>
+                  <option value="5">Medium Office</option>
+                  <option value="6">Midrise Apartment</option>
+                  <option value="7">OutPatient</option>
+                  <option value="8">Primary School</option>
+                  <option value="9">Quick Service Restaurant</option>
+                  <option value="10">Secondary School</option>
+                  <option value="11">Small Hotel</option>
+                  <option value="12">Small Office</option>
+                  <option value="13">Stand-alone Retail</option>
+                  <option value="14">Strip Mall</option>
+                  <option value="15">Super Market</option>
+                  <option value="16">Warehouse</option>
+              </select><br><br>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    </div>
+    <hr>
+        <footer>
+            <p style="text-align: center; color: #000;">More about us</p>
+            <div class="footer">
+
+                <div class="social-icons">
+                    
+                    <a href="https://github.com/go19kul16" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/go19kul16" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/go19.kul16/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/gokul-nellaiappan-948a9b1b2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    
+               
+            
+        </footer>
+        <p style="color: #000; text-align: center;" class="copyright">Gokul.N © 2024</p>
+    </div>
+               
+    </body>
+</html>
