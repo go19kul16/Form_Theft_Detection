@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .normal {
+            color: green;
+        }
+        .not-normal {
+            color: red;
+        }
+        /* Container for centering content */
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header styles */
+        h1 {
+            color: #007BFF;
+        }
+
+        /* Result page styles */
+        .result p {
+            font-size: 1.2em;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Back to form container */
+        .back-to-form {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 8px;
+            margin: 10px 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-to-form:hover {
+            background-color: #0056b3;
+        }
+
+        /* Flex container for entered values */
+        .container1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 20px;
+        }
+
+        .vertical-line {
+            border-left: 2px solid #000;
+            height: 100%;
+            margin: 0 20px;
+        }
+
+        .p {
+            font-size: smaller;
+        }
+    </style>
+</head>
+<body>
+    <div class="container result">
+        <h1>Prediction Result</h1>
+        <h2>The Current Situation is: <strong style="color: green;">{{ prediction_text }}</strong></h2>
+        <p style="font-size: small;"><strong style="color: red;">Description:</strong> {{ messages }}</p>
+
+        <div class="back-to-form">
+            <a href="/">Go Back to the Form</a>
+        </div>
+
+        <hr>
+        <h1>Entered Values</h1>
+        <div class="container1">
+            <ul class="list">
+                <li><h2>Fans: <strong style="color: green;">{{ request.form.get("fans") }}</strong></h2></li>
+                <li><h2>Cooling: <strong style="color: green;">{{ request.form.get("cooling") }}</strong></h2></li>
+                <li><h2>Heating 1: <strong style="color: green;">{{ request.form.get("heating1") }}</strong></h2></li>
+                <li><h2>Interior Lights: <strong style="color: green;">{{ request.form.get("interiorLights") }}</strong></h2></li>
+                <li><h2>Interior Equipment 1: <strong style="color: green;">{{ request.form.get("interiorEquipment1") }}</strong></h2></li>
+            </ul>
+            <div class="vertical-line"></div>
+            <ul class="list">
+                <li><h2>Electricity: <strong style="color: green;">{{ request.form.get("electricity") }}</strong></h2></li>
+                <li><h2>Gas: <strong style="color: green;">{{ request.form.get("gas") }}</strong></h2></li>
+                <li><h2>Heating 2: <strong style="color: green;">{{ request.form.get("heating2") }}</strong></h2></li>
+                <li><h2>Water Heater: <strong style="color: green;">{{ request.form.get("waterHeater") }}</strong></h2></li>
+                <li><h2>Interior Equipment 2: <strong style="color: green;">{{ request.form.get("interiorEquipment2") }}</strong></h2></li>
+            </ul>
+        </div>
+        <li>
+            <h2 style="text-align: center;">Customer Type: <strong style="color: green;">{{ request.form.get("customerType") }}</strong></h2>
+        </li>
+        <p style="font-size: smaller;">
+            1. Full Service Restaurant, 2. Hospital, 3. Large Hotel, 4. Large Office, 5. Medium Office, 
+            6. Midrise Apartment, 7. OutPatient, 8. Primary School, 9. Quick Service Restaurant, 
+            10. Secondary School, 11. Small Hotel, 12. Small Office, 13. Stand-alone Retail, 
+            14. Strip Mall, 15. Super Market, 16. Warehouse
+        </p>
+        <hr>
+    </div>
+    <script>
+        window.addEventListener('beforeunload', function (e) {
+            window.location.href = 'testing.html'; // Replace 'home.html' with the URL of your home screen
+        });
+    </script>
+</body>
+</html>
